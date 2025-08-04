@@ -1,6 +1,3 @@
-# phonebot
-the real phone bot
-
 # Setup
 1. Create a `.env` file containing the discord bot token
    `BOT_TOKEN=<DISCORD_BOT_TOKEN>`
