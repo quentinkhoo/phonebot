@@ -5,7 +5,6 @@ import os
 
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-print(BOT_TOKEN)
 
 # for testing reasons
 TEST_CHANNEL_ID = 1401921828804493353
@@ -38,6 +37,5 @@ async def on_presence_update(old_presence, new_presence):
 
     if (new_presence.activity == None and old_presence.activity.name == "Dota 2"):
       await channel.send('@everyone phone stop playing le, can finally win')
-
 
 client.run(BOT_TOKEN)
