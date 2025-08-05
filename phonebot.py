@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 import discord
 import os
 from datetime import datetime
-import time
 
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
