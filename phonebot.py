@@ -11,7 +11,8 @@ TEST_CHANNEL_ID = 1401921828804493353
 TEST_USER_ID = 210092278675537920
 
 # #dota2 news feed
-CHANNEL_ID = 861425569887682620
+LILBITCH_CHANNEL_ID = 861425569887682620
+EXTRA_PEACEFUL_CHANNEL_ID = 865560755138986014
 # our favourite
 PHONE_USER_ID = 150641779794903040
 
@@ -29,13 +30,19 @@ async def on_ready():
 @client.event
 async def on_presence_update(old_presence, new_presence):
 
-  channel = client.get_channel(TEST_CHANNEL_ID)
+  test_channel = client.get_channel(TEST_CHANNEL_ID)
+  lilbitch_channel = client.get_channel(LILBITCH_CHANNEL_ID)
+  extra_peaceful_channel = client.get_channel(EXTRA_PEACEFUL_CHANNEL_ID)
     
   if (new_presence.id == TEST_USER_ID):
     if (new_presence.activity != None and new_presence.activity.name == "Dota 2"):
-      await channel.send('@everyone phone is online on dota boys!')
+      await test_channel.send('@everyone phone is online on dota boys!')
+      await lilbitch_channel.send('@everyone phone is online on dota boys!')
+      await extra_peaceful_channel.send('@everyone phone is online on dota boys!')
 
     if (new_presence.activity == None and old_presence.activity.name == "Dota 2"):
-      await channel.send('@everyone phone stop playing le, can finally win')
+      await test_channel.send('@everyone phone stop playing le, can finally win')
+      await lilbitch_channel.send('@everyone phone stop playing le, can finally win')
+      await lilbitch_channel.send('@everyone phone stop playing le, can finally win')
 
 client.run(BOT_TOKEN)
