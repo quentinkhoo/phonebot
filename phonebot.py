@@ -34,7 +34,7 @@ async def on_presence_update(old_presence, new_presence):
 
   channel = client.get_channel(GUILD_CHANNEL_IDS[GUILDS.index(old_presence.guild.name)])
     
-  if (new_presence.id == TEST_USER_ID):
+  if (new_presence.id == PHONE_USER_ID):
     if (new_presence.activity != None and new_presence.activity.name == "Dota 2"):
       print(f"Phone started playing at {datetime.now()}")
       await channel.send("@everyone hello boys, come dotes don't dodge")
